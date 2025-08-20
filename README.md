@@ -216,7 +216,6 @@ file-parser-crud-api/
 ├── app.py                 # Main Flask application
 ├── README.md             # Project documentation
 ├── requirements.txt      # Python dependencies
-├── Postman_Collection.json # API testing collection
 └── uploads/             # Directory for uploaded files (created automatically)
 ```
 
