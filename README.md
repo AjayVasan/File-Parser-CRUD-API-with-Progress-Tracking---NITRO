@@ -233,9 +233,9 @@ This API has been thoroughly tested using **Postman** for debugging and validati
 
 ### Import Postman Collection
 1. Open Postman
-2. Click "Import" in the top left
-3. Select the `Postman_Collection.json` file
-4. Configure base URL: `http://localhost:5000`
+2. Click "New" in the top left
+3. Select the type of request and paste the address  `URL` of the hosted flask server 
+4. Configure base URL: `http://localhost:5000` on need!
 
 ### Manual Testing Endpoints
 You can test all endpoints using the curl examples below or use the provided Postman collection for a more user-friendly testing experience.
