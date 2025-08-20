@@ -1,22 +1,24 @@
 # File Parser CRUD API
 
-A Flask-based REST API that supports uploading, storing, parsing, and retrieving files with real-time progress tracking. The application provides complete CRUD functionality for file management with support for various file formats.
+A Flask-based REST API that supports uploading, storing, parsing, and retrieving files with real-time progress tracking. The application provides complete CRUD functionality for file management with support for various file formats including PDF, DOCX, TXT, and more.
 
 ## Features
 
 - ✅ **File Upload** - Support for multipart file uploads with unique ID assignment
 - ✅ **Progress Tracking** - Real-time upload and processing progress monitoring
-- ✅ **File Parsing** - Automatic content extraction using LlamaIndex
+- ✅ **File Parsing** - Intelligent document content extraction using LlamaIndex
 - ✅ **CRUD Operations** - Complete Create, Read, Update, Delete functionality
 - ✅ **Metadata Storage** - File information including size, type, and timestamps
 - ✅ **Error Handling** - Comprehensive error responses and validation
+- ✅ **Format Support** - PDF, DOCX, TXT, CSV, and other document formats
 
 ## Tech Stack
 
 - **Backend Framework**: Flask
-- **File Parsing**: LlamaIndex Core
-- **Storage**: Local file system
+- **File Parsing Engine**: LlamaIndex Core (SimpleDirectoryReader)
+- **Storage**: Local file system with metadata tracking
 - **Data Format**: JSON responses
+- **Testing**: Postman for API testing and debugging
 
 ## API Endpoints
 
@@ -149,8 +151,20 @@ cd file-parser-crud-api
 
 ### 2. Install Dependencies
 ```bash
+pip install -r requirements.txt
+```
+
+Or install manually:
+```bash
 pip install flask llama-index-core
 ```
+
+**About LlamaIndex:**
+LlamaIndex is a powerful data framework designed to help you build applications with large language models (LLMs). In this project, we use:
+- `SimpleDirectoryReader` - For intelligent document loading and parsing
+- Supports multiple file formats: PDF, DOCX, TXT, CSV, HTML, and more
+- Automatically extracts text content and metadata from documents
+- Provides structured document chunking for better content organization
 
 ### 3. Configure Upload Directory
 Update the `UPLOAD_FOLDER` path in the code to match your system:
@@ -202,8 +216,29 @@ file-parser-crud-api/
 ├── app.py                 # Main Flask application
 ├── README.md             # Project documentation
 ├── requirements.txt      # Python dependencies
+├── Postman_Collection.json # API testing collection
 └── uploads/             # Directory for uploaded files (created automatically)
 ```
+
+## Testing
+
+This API has been thoroughly tested using **Postman** for debugging and validation. A complete Postman collection is included with:
+
+### Postman Collection Features
+- ✅ All API endpoints with sample requests
+- ✅ Environment variables for easy testing
+- ✅ Pre-configured test cases
+- ✅ Response validation scripts
+- ✅ File upload examples
+
+### Import Postman Collection
+1. Open Postman
+2. Click "Import" in the top left
+3. Select the `Postman_Collection.json` file
+4. Configure base URL: `http://localhost:5000`
+
+### Manual Testing Endpoints
+You can test all endpoints using the curl examples below or use the provided Postman collection for a more user-friendly testing experience.
 
 ## Features Implemented
 
@@ -238,6 +273,18 @@ The API provides comprehensive error handling:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## About the Developer
+
+**Ajay Vasan** - Computer Science Engineering Student at Lovely Professional University
+- 🔗 **LinkedIn**: [linkedin.com/in/ajay-vasan](https://linkedin.com/in/ajay-vasan)
+- 📧 **Email**: mrajayvasan@gmail.com
+- 💻 **GitHub**: [github.com/AjayVasan](https://github.com/AjayVasan)
+
+### Experience Highlights:
+- **Google Adversarial Nibbler Project** - Adversarial Tester (Oct 2024 - Jan 2025)
+- **IBM Cybersecurity Program** - Internship at Allsoft Solutions (June - July 2024)
+- Specialized in **Machine Learning**, **AI Safety Testing**, and **Cybersecurity**
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -248,4 +295,6 @@ If you encounter any issues or have questions, please open an issue on GitHub.
 
 ---
 
-**Note**: This is a demonstration project. For production use, consider implementing additional security measures, database integration, and proper authentication mechanisms.
+**Note**: This project demonstrates advanced file parsing capabilities using LlamaIndex and comprehensive API design. Tested extensively with Postman for reliability and performance. For production use, consider implementing additional security measures, database integration, and proper authentication mechanisms.
+
+**Built with ❤️ by Ajay Vasan**
